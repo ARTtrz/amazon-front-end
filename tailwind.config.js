@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 const twColors = require('tailwindcss/colors')
 const colors = {
-  transparent: twColors.transparent,
-  black: '#2e3239',
-  white: twColors.white,
-  secondary: '#161D25',
-  primary: '#ff9902',
-  aqua: '#268697',
-  'bg-color': '#F2f2f5',
-  
+	transparent: twColors.transparent,
+	black: '#2e3239',
+	white: twColors.white,
+	secondary: '#161D25',
+	gray: '#CDCDCD',
+	primary: '#ff9902',
+	aqua: '#268697',
+	'bg-color': '#F2f2f5'
 }
 module.exports = {
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
-		'./app/**/*.{js,ts,jsx,tsx}'
+		'./src/**/*.{js,ts,jsx,tsx}'
 	],
 	theme: {
 		colors,
@@ -40,10 +40,10 @@ module.exports = {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
 			},
 			keyframes: {
-        animationOpacity: {
-          from: {opacity: 0.2},
-          to: {opacity:1}
-        },
+				animationOpacity: {
+					from: { opacity: 0.2 },
+					to: { opacity: 1 }
+				},
 				fade: {
 					from: { opacity: 0 },
 					to: { opacity: 1 }
