@@ -1,7 +1,7 @@
 import instance from '@/api/api.interceptor'
-import { IUser } from '@/shared/types/user.types'
+import { IFullUser, IUser } from '@/shared/types/user.types'
 
-const USER = 'users'
+const USER = 'user'
 
 type TypeData = {
 	email: string
@@ -13,7 +13,7 @@ type TypeData = {
 
 export const UserService = {
 	async getProfile() {
-		return instance<IUser[]>({
+		return instance<IFullUser>({
 			url: `${USER}/profile`,
 			method: 'GET'
 		})
@@ -28,7 +28,7 @@ export const UserService = {
 	},
 
 	async toggleFavorite(productId: string | number) {
-		return instance<IUser>({
+		return instance<IFullUser>({
 			url: `${USER}/profile/favorites/${productId}`,
 			method: 'PATCH'
 		})

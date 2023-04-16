@@ -40,9 +40,10 @@ import { removeTokenStorage } from '@/services/auth/auth.helper'
 import { AuthService } from '@/services/auth/auth.service'
 
 import { errorCatch } from './api.helper'
+import { API_URL } from '@/config/api.config'
 
 const instance = axios.create({
-	baseURL: process.env.SERVER_URL,
+	baseURL: API_URL,
 	headers: {
 		'Content-Type': 'application/json'
 	}
@@ -85,7 +86,7 @@ instance.interceptors.response.use(
 export default instance
 
 export const axiosClassic = axios.create({
-	baseURL: process.env.SERVER_URL,
+	baseURL: API_URL,
 	headers: {
 		'Content-Type': 'application/json'
 	}

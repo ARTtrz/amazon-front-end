@@ -1,18 +1,25 @@
+import axios from 'axios'
+
 import { TypeProductData, TypeProductDataFilters } from './product.types'
 import instance, { axiosClassic } from '@/api/api.interceptor'
-import { IProduct } from '@/shared/types/product.interface'
+import {
+	IProduct,
+	TypePaginationProducts
+} from '@/shared/types/product.interface'
 
-const PRODUCTS = 'products'
+const PRODUCTS = 'product'
 
 export const ProductService = {
 	async getAll(
 		queryData: TypeProductDataFilters = {} as TypeProductDataFilters
 	) {
-		return axiosClassic<IProduct[]>({
-			url: PRODUCTS,
+		const { data } = await axiosClassic<TypePaginationProducts>({
+			url: 'product',
 			method: 'GET',
 			params: queryData
 		})
+
+		return data
 	},
 
 	async getSimilar(productId: string | number) {

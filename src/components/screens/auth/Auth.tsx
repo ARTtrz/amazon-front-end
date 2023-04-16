@@ -13,7 +13,6 @@ import { useAuthRedirect } from './useAuthRedirect'
 import Meta from '@/utils/meta/Meta'
 
 const Auth: FC = () => {
-	useAuthRedirect()
 	const { isLoading } = useAuth()
 	const { login, register } = UseActions()
 

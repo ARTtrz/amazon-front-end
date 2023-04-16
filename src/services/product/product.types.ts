@@ -10,12 +10,12 @@ export type TypeProductDataFilters = {
 	sort?: EnumProductSort
 	searchTerm?: string
 	page?: string | number
-	perPage: string | number
+	perPage?: string | number
 }
 
 export enum EnumProductSort {
-	HIGH_PRICE = 'HIGH_PRICE',
-	LOW_PRICE = 'LOW_PRICE',
-	NEWEST = 'NEWEST',
-	OLDEST = 'OLDEST'
+	HIGH_PRICE = 'high_price',
+	LOW_PRICE = 'low_price',
+	NEWEST = 'newest',
+	OLDEST = 'oldest'
 }
